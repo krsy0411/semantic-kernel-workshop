@@ -403,3 +403,6 @@ workshop/
 workshop*/
 !workshop.*/
 Database.*
+
+# 특정 파일에 prettier extension 포맷팅 막기
+.prettierignore
