@@ -297,7 +297,6 @@ Semantic Kernel에 In-Memory 벡터 데이터베이스에 저장되어 있는 �
     ```csharp
     Console.Write("Assistant: ");
 
-    ```csharp
     // 👇👇👇 아래 코드를 삭제하세요
     var response = kernel.InvokePromptStreamingAsync(input);
     await foreach (var content in response)
@@ -602,6 +601,18 @@ Semantic Kernel을 활용한 챗봇 호출 결과를 [.NET Aspire 대시보드](
 1. Docker Desktop을 열고 아래와 같이 현재 실행중인 .NET Aspire 대시보드의 로그를 클릭합니다. 그리고 `http://localhost:18888/login?t=xxx` 링크를 클릭해서 웹 브라우저로 이동합니다.
 
    ![Docker Desktop - .NET Aspire 대시보드 로그](./images/image-01.png)
+
+   > GitHub Codespaces를 사용하는 경우에는 아래와 같이 .NET Aspire 대시보드에 접속합니다.
+   > 
+   > 1. `docker ps` 명령어를 실행시켜 아래와 같은 데이터가 나오는지 확인합니다. `CONTAINER ID` 값은 다를 수 있습니다.
+   > 
+   >     ```bash
+   >     CONTAINER ID   IMAGE                                           COMMAND
+   >     da5352cbe331   mcr.microsoft.com/dotnet/aspire-dashboard:9.0   "dotnet /app/Aspire.…"
+   >     ```
+   > 
+   > 1. `docker logs {{CONTAINER_ID}}` 명령어를 실행시켜 컨테이너 로그를 출력합니다. 이 때 `{{CONTAINER_ID}}` 값은 앞서 `docker ps` 명령어로 확인한 `CONTAINER ID` 값입니다.
+   > 1. 컨테이너 로그에서 `http://localhost:18888/login?t=xxx`와 같은 링크를 찾아 클릭해서 .NET Aspire 대시보드를 새 탭에서 엽니다. 혹시 token 값을 물어보면 로그 화면에서 `?t=xxx`와 같은 부분을 찾아 `xxx`값을 복사해서 붙여넣기 합니다.
 
 1. 웹 브라우저에서 .NET Aspire 대시보드를 확인합니다.
 
